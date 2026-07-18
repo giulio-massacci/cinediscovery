@@ -1,12 +1,9 @@
 import sqlite3
 import json
-from pathlib import Path
-
-DB_PATH = Path(__file__).parent / "cache.db"
-
+import config
 
 def _connect() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(config.DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 

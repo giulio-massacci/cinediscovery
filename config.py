@@ -1,6 +1,10 @@
 import os
 from dotenv import load_dotenv
+from pathlib import Path
+
 load_dotenv()
+
+DB_PATH = Path(__file__).parent / "cache.db"
 
 TMDB_BASE = "https://api.themoviedb.org/3"
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")

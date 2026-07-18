@@ -16,7 +16,8 @@ st.divider()
 db.init()
 
 COLS = ["Date", "Time", "Channel", "Title", "Streaming", "Purchase", "Rent", "Availability"]
-COLUMN_CONFIG = {c: st.column_config.TextColumn(c) for c in COLS}
+VISIBLE_COLS = ["Date", "Time", "Channel", "Title", "Availability"]
+COLUMN_CONFIG = {c: st.column_config.TextColumn(c) for c in VISIBLE_COLS}
 
 
 @st.cache_data(show_spinner="Fetching TV schedule...", ttl=3600)
@@ -30,17 +31,17 @@ def _make_row(day, number, time, title, channel, cached):
         return [date_str, time, channel, title, "⏳", "⏳", "⏳", "⏳ Fetching..."]
     streaming, purchase, rent = cached
     if streaming is None and purchase is None and rent is None:
-        return [date_str, time, channel, title, "Not found on TMDB", "-", "-", "Not found on TMDB"]
+        return [date_str, time, channel, title, "Not found on TMDB", "-", "-", "⚪Not found on TMDB"]
     s = ", ".join(streaming) if streaming else "-"
     b = ", ".join(purchase) if purchase else "-"
     r = ", ".join(rent) if rent else "-"
     total = len(set((streaming or []) + (purchase or []) + (rent or [])))
     if not streaming and not purchase and not rent:
-        availability = "Only on TV"
+        availability = "🟢Only on TV"
     elif streaming:
-        availability = f"Available on {total} platform{'s' if total != 1 else ''}"
+        availability = "🟠Available on platforms"
     else:
-        availability = "Pay only"
+        availability = "🔵Pay only"
     return [date_str, time, channel, title, s, b, r, availability]
 
 
@@ -55,6 +56,23 @@ def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availabili
     if sel_availability != "All":
         f = f[f["Availability"] == sel_availability]
     return f
+
+
+@st.dialog("📽️ Streaming & Availability Details")
+def _show_film_details(row):
+    st.subheader(row["Title"])
+    st.caption(f"{row['Date']} · {row['Time']} · {row['Channel']}")
+    st.divider()
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("**🎬 Streaming**")
+        st.write(row["Streaming"])
+    with col2:
+        st.markdown("**🛒 Purchase**")
+        st.write(row["Purchase"])
+    with col3:
+        st.markdown("**🏷️ Rent**")
+        st.write(row["Rent"])
 
 
 # ── Load TV schedule + cache ────────────────────────────────────────────────
@@ -73,9 +91,12 @@ uncached = [
     if title.lower() not in cache
 ]
 
+if "dialog_row_key" not in st.session_state:
+    st.session_state.dialog_row_key = None
+
 # ── Filters ─────────────────────────────────────────────────────────────────
 st.subheader("Filters")
-col1, col2, col3, col4 = st.columns([2, 1, 1, 1])
+col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 with col1:
     search_title = st.text_input("Title", placeholder="Search by title...")
 with col2:
@@ -94,11 +115,26 @@ with col4:
 count_ph = st.empty()
 table_ph = st.empty()
 
-
 def _render(dataframe):
     filtered = _apply_filters(dataframe, search_title, selected_channel, selected_day, selected_availability)
     count_ph.markdown(f"**{len(filtered)} films**")
-    table_ph.dataframe(filtered, use_container_width=True, hide_index=True, column_config=COLUMN_CONFIG)
+    event = table_ph.dataframe(
+        filtered[VISIBLE_COLS],
+        hide_index=True,
+        column_config=COLUMN_CONFIG,
+        on_select="rerun",
+        selection_mode="single-row",
+        key="main_table",
+    )
+    selected = event.selection.rows
+    if selected and selected[0] < len(filtered):
+        row = filtered.iloc[selected[0]]
+        new_key = (row["Title"], row["Date"], row["Time"])
+        if new_key != st.session_state.dialog_row_key:
+            st.session_state.dialog_row_key = new_key
+            _show_film_details(row)
+    else:
+        st.session_state.dialog_row_key = None
 
 
 _render(df)
