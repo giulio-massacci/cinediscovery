@@ -23,6 +23,16 @@ def init() -> None:
         """)
 
 
+def purge_old(years: int = 1) -> int:
+    """Delete cached entries older than `years` years. Returns the number of deleted rows."""
+    with _connect() as conn:
+        cur = conn.execute(
+            "DELETE FROM tmdb_cache WHERE cached_at < datetime('now', ?)",
+            (f"-{years} year",),
+        )
+        return cur.rowcount
+
+
 def get_all() -> dict:
     """Return {title.lower(): (streaming, purchase, rent)} for every cached entry.
 

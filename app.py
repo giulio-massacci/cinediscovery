@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from datetime import timedelta
 import db
 from sources.tvprograms import TVProgramms
 from sources.tmdb import TMDB
@@ -20,7 +21,12 @@ VISIBLE_COLS = ["Date", "Time", "Channel", "Title", "Availability"]
 COLUMN_CONFIG = {c: st.column_config.TextColumn(c) for c in VISIBLE_COLS}
 
 
-@st.cache_data(show_spinner="Fetching TV schedule...", ttl=3600)
+@st.cache_data(ttl=timedelta(days=365), show_spinner=False)
+def _purge_old_cache():
+    db.purge_old()
+
+
+@st.cache_data(show_spinner="Fetching TV schedule...", ttl=timedelta(hours=24))
 def get_tv_schedule():
     return TVProgramms().get_all_films()
 
@@ -76,6 +82,7 @@ def _show_film_details(row):
 
 
 # ── Load TV schedule + cache ────────────────────────────────────────────────
+_purge_old_cache()
 films = get_tv_schedule()
 cache = db.get_all()
 
