@@ -115,7 +115,8 @@ with col4:
 count_ph = st.empty()
 table_ph = st.empty()
 
-def _render(dataframe):
+def _render(dataframe, _n=[0]):
+    _n[0] += 1
     filtered = _apply_filters(dataframe, search_title, selected_channel, selected_day, selected_availability)
     count_ph.markdown(f"**{len(filtered)} films**")
     event = table_ph.dataframe(
@@ -124,7 +125,7 @@ def _render(dataframe):
         column_config=COLUMN_CONFIG,
         on_select="rerun",
         selection_mode="single-row",
-        key="main_table",
+        key=f"main_table_{_n[0]}",
     )
     selected = event.selection.rows
     if selected and selected[0] < len(filtered):
