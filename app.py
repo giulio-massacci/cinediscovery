@@ -189,14 +189,10 @@ else:
 
 # ── About / Credits ──────────────────────────────────────────────────────────
 st.divider()
-col_logo, col_text = st.columns([1, 6])
-with col_logo:
-    st.image(
-        "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg",
-        width=120,
-    )
-with col_text:
-    st.caption(
-        "This product uses the TMDB API but is not endorsed or certified by TMDB. "
-        "TV schedule data sourced from [programmitv.com](https://www.programmitv.com)."
-    )
+st.caption("TV schedule data sourced from [programmitv.com](https://www.programmitv.com).")
+st.markdown(
+    '<img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" '
+    'height="14" style="vertical-align:middle;margin-right:6px;opacity:.7">'
+    '<span style="font-size:12px;color:gray">This product uses the TMDB API but is not endorsed or certified by TMDB.</span>',
+    unsafe_allow_html=True,
+)
