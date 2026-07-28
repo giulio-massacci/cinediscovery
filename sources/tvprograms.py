@@ -10,7 +10,7 @@ from sources.utils import CINEUtils
 URL = config.URL_PROGRAMS
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0"
+    "User-Agent": "CineDiscovery-bot/1.0 (educational project; github.com/giulio-massacci/cinediscovery)"
 }
 
 class TVProgramms:
@@ -73,8 +73,9 @@ class TVProgramms:
         end_of_month = today + relativedelta.relativedelta(months=1, day=1) - relativedelta.relativedelta(days=1)
         for d in config.URL_DAYS:
             soup = self._fetch_soup(d)
-            for title, time, day, number, channel in self._extract_films(soup, d):
+            for title, airtime, day, number, channel in self._extract_films(soup, d):
                 day_order = int(number)-today.day if int(number)-today.day>=0 else end_of_month.day+int(number)-today.day
-                films.append([day_order, day, number, time, title, channel])
+                films.append([day_order, day, number, airtime, title, channel])
+            time.sleep(1)  # polite delay between pages
         films.sort()
         return [f[1:] for f in films]

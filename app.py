@@ -197,5 +197,6 @@ with col_logo:
     )
 with col_text:
     st.caption(
-        "This product uses the TMDB API but is not endorsed or certified by TMDB."
+        "This product uses the TMDB API but is not endorsed or certified by TMDB. "
+        "TV schedule data sourced from [programmitv.com](https://www.programmitv.com)."
     )
