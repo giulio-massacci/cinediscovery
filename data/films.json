@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T14:01:47+00:00",
+  "generated_at": "2026-07-28T15:28:36+00:00",
   "films": [
     {
       "day": "Mar",
@@ -677,28 +677,6 @@
       "number": "29",
       "date": "Mer 29",
       "time": "21:10",
-      "title": "I ragazzi della 56ª strada",
-      "channel": "27 TWENTYSEVEN",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Amazon Video"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 7.2,
-      "director": "Francis Ford Coppola",
-      "tmdb_url": "https://www.themoviedb.org/movie/227"
-    },
-    {
-      "day": "Mer",
-      "number": "29",
-      "date": "Mer 29",
-      "time": "21:10",
       "title": "The Forger - Il falsario",
       "channel": "20",
       "not_found": false,
@@ -755,6 +733,28 @@
       "rating": 5.9,
       "director": "Paolo Virzì",
       "tmdb_url": "https://www.themoviedb.org/movie/1096252"
+    },
+    {
+      "day": "Mer",
+      "number": "29",
+      "date": "Mer 29",
+      "time": "21:11",
+      "title": "I ragazzi della 56ª strada",
+      "channel": "27 TWENTYSEVEN",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Amazon Video"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Amazon Video"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 7.2,
+      "director": "Francis Ford Coppola",
+      "tmdb_url": "https://www.themoviedb.org/movie/227"
     },
     {
       "day": "Mer",
@@ -3473,7 +3473,7 @@
       "day": "Lun",
       "number": "3",
       "date": "Lun 3",
-      "time": "20:55",
+      "time": "20:49",
       "title": "The Stranger",
       "channel": "RAI 5",
       "not_found": false,
@@ -3744,6 +3744,24 @@
       "day": "Lun",
       "number": "3",
       "date": "Lun 3",
+      "time": "22:42",
+      "title": "Triple Agent - Agente speciale",
+      "channel": "RAI 5",
+      "not_found": false,
+      "streaming": [
+        "Nexo Plus"
+      ],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟠Available on platforms",
+      "rating": 5.8,
+      "director": "Éric Rohmer",
+      "tmdb_url": "https://www.themoviedb.org/movie/65041"
+    },
+    {
+      "day": "Lun",
+      "number": "3",
+      "date": "Lun 3",
       "time": "22:45",
       "title": "Tutte insieme all'Abbazia",
       "channel": "RAI 2",
@@ -3771,24 +3789,6 @@
       "rating": 5.7,
       "director": "Stefan Brogren",
       "tmdb_url": "https://www.themoviedb.org/movie/814849"
-    },
-    {
-      "day": "Lun",
-      "number": "3",
-      "date": "Lun 3",
-      "time": "22:53",
-      "title": "Triple Agent - Agente speciale",
-      "channel": "RAI 5",
-      "not_found": false,
-      "streaming": [
-        "Nexo Plus"
-      ],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟠Available on platforms",
-      "rating": 5.8,
-      "director": "Éric Rohmer",
-      "tmdb_url": "https://www.themoviedb.org/movie/65041"
     },
     {
       "day": "Lun",
@@ -4062,7 +4062,7 @@
       "day": "Mar",
       "number": "4",
       "date": "Mar 4",
-      "time": "20:52",
+      "time": "20:51",
       "title": "Welcome Venice",
       "channel": "RAI 5",
       "not_found": false,
@@ -4326,7 +4326,7 @@
       "day": "Mar",
       "number": "4",
       "date": "Mar 4",
-      "time": "22:32",
+      "time": "22:30",
       "title": "L'afide e la formica",
       "channel": "RAI 5",
       "not_found": false,
