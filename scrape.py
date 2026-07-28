@@ -38,8 +38,8 @@ def main():
 
     for idx, (day, number, time_str, title, channel) in enumerate(films_raw, 1):
         print(f"  [{idx}/{len(films_raw)}] {title}")
-        streaming, purchase, rent = tmdb.get_providers(title)
-        not_found = streaming is None and purchase is None and rent is None
+        streaming, purchase, rent, rating, director, tmdb_url = tmdb.get_film_data(title)
+        not_found = streaming is None
         results.append({
             "day": day,
             "number": number,
@@ -52,6 +52,9 @@ def main():
             "purchase": purchase or [],
             "rent": rent or [],
             "availability": _availability(streaming, purchase, rent, not_found),
+            "rating": rating,
+            "director": director,
+            "tmdb_url": tmdb_url or "",
         })
         time.sleep(TMDB_DELAY)
 

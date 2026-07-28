@@ -7,16 +7,19 @@ st.set_page_config(page_title="CineDiscovery", page_icon="🎬", layout="wide")
 
 st.title("🎬 CineDiscovery")
 st.markdown(
-    "Discover the films airing on TV this week and instantly check "
-    "where you can stream, buy, or rent them."
+    "A weekly guide to films on Italian TV, with streaming availability at a glance."
 )
 st.divider()
 
 DATA_FILE = Path(__file__).parent / "data" / "films.json"
 
-COLS = ["Date", "Time", "Channel", "Title", "Streaming", "Purchase", "Rent", "Availability"]
-VISIBLE_COLS = ["Date", "Time", "Channel", "Title", "Availability"]
-COLUMN_CONFIG = {c: st.column_config.TextColumn(c) for c in VISIBLE_COLS}
+COLS = ["Date", "Time", "Channel", "Title", "Streaming", "Purchase", "Rent", "Availability", "Rating", "Director", "Details"]
+VISIBLE_COLS = ["Date", "Time", "Channel", "Title", "Director", "Availability", "Rating", "Details"]
+COLUMN_CONFIG = {
+    **{c: st.column_config.TextColumn(c) for c in ["Date", "Time", "Channel", "Title", "Availability"]},
+    "Rating": st.column_config.NumberColumn("Rating", format="⭐ %.1f", min_value=0, max_value=10),
+    "Details": st.column_config.LinkColumn("Details", display_text="🔗 Link", width="small"),
+}
 
 
 @st.cache_data(show_spinner="Loading film data...", ttl=3600)
@@ -39,6 +42,9 @@ def load_data():
             ", ".join(purchase) if purchase else "-",
             ", ".join(rent) if rent else "-",
             film.get("availability", ""),
+            film.get("rating"),
+            film.get("director") or "-",
+            film.get("tmdb_url") or None,
         ])
     return pd.DataFrame(rows, columns=COLS), data.get("generated_at")
 
@@ -59,7 +65,16 @@ def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availabili
 @st.dialog("📽️ Streaming & Availability Details")
 def _show_film_details(row):
     st.subheader(row["Title"])
-    st.caption(f"{row['Date']} · {row['Time']} · {row['Channel']}")
+    meta_parts = [f"{row['Date']} · {row['Time']} · {row['Channel']}"]
+    if row["Director"] and row["Director"] != "-":
+        meta_parts.append(f"Regia: {row['Director']}")
+    st.caption(" · ".join(meta_parts))
+    rating = row["Rating"]
+    if rating is not None and str(rating) not in ("", "nan"):
+        st.caption(f"⭐ {rating}/10")
+    tmdb_url = row["Details"]
+    if tmdb_url:
+        st.link_button("🔗 Apri su TMDB", tmdb_url)
     st.divider()
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -85,6 +100,56 @@ if generated_at:
 
 if "dialog_row_key" not in st.session_state:
     st.session_state.dialog_row_key = None
+
+# ── Top X Cards ─────────────────────────────────────────────────────────────
+topX = df[pd.notna(df["Rating"])].nlargest(15, "Rating").reset_index(drop=True)
+if not topX.empty:
+    st.subheader("🏆 Top 15 films this week")
+    _AVAIL_COLOR = {
+        "🟢Only on TV":            "#2ecc71",
+        "🟠Available on platforms": "#e67e22",
+        "🔵Pay only":              "#3498db",
+    }
+    cols = st.columns(5)
+    for i, film in topX.iterrows():
+        color = _AVAIL_COLOR.get(film["Availability"], "#666666")
+        director_line = (
+            f'<div style="font-size:10px;color:#aaa;margin-bottom:3px">'
+            f'{film["Director"]}</div>'
+            if film["Director"] != "-" else ""
+        )
+        tmdb_href = (
+            f'href="{film["Details"]}" target="_blank"'
+            if pd.notna(film["Details"]) and film["Details"] else ""
+        )
+        with cols[i % 5]:
+            st.markdown(
+                f"""<a {tmdb_href} style="text-decoration:none">
+                <div style="
+                    background:linear-gradient(150deg,#1e1e2e,#2a2a3e);
+                    border-radius:12px; padding:14px; margin-bottom:8px;
+                    border-left:4px solid {color}; min-height:150px;
+                    cursor:{'pointer' if tmdb_href else 'default'};
+                    transition:opacity .2s;
+                " onmouseover="this.style.opacity='.8'"
+                   onmouseout="this.style.opacity='1'">
+                    <div style="font-size:15px;font-weight:700;color:#fff;
+                                line-height:1.35;margin-bottom:6px"
+                    >{film["Title"]}</div>
+                    <div style="font-size:20px;font-weight:800;color:#f1c40f;
+                                margin-bottom:4px">⭐ {film["Rating"]}</div>
+                    {director_line}
+                    <div style="font-size:10px;color:#888">
+                        {film["Date"]} · {film["Time"]}<br>
+                        {film["Channel"]}
+                    </div>
+                    <div style="font-size:10px;color:{color};margin-top:6px">
+                        {film["Availability"]}
+                    </div>
+                </div></a>""",
+                unsafe_allow_html=True,
+            )
+    st.divider()
 
 # ── Filters ─────────────────────────────────────────────────────────────────
 st.subheader("Filters")
