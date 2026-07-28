@@ -40,7 +40,7 @@ This means the Streamlit app has **zero network calls at runtime** — it just r
 ### Prerequisites
 
 - Python 3.9+
-- A free [TMDB API key](https://www.themoviedb.org/settings/api)
+- A free [TMDB API key](https://www.themoviedb.org/documentation/api)
 
 ### Installation
 
@@ -126,7 +126,7 @@ cinediscovery/
 | [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) | TV schedule scraping |
 | [TMDB API](https://www.themoviedb.org/documentation/api) | Film metadata & watch providers |
 | [pandas](https://pandas.pydata.org) | Data wrangling |
-| SQLite | Local result caching |
+| GitHub Actions | Automation |
 
 ---
 
