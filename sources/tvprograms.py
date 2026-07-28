@@ -76,5 +76,5 @@ class TVProgramms:
             for title, time, day, number, channel in self._extract_films(soup, d):
                 day_order = int(number)-today.day if int(number)-today.day>=0 else end_of_month.day+int(number)-today.day
                 films.append([day_order, day, number, time, title, channel])
-        #films.sort()
+        films.sort()
         return [f[1:] for f in films]

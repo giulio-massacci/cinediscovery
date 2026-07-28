@@ -1,9 +1,7 @@
+import json
 import streamlit as st
 import pandas as pd
-from datetime import timedelta
-import db
-from sources.tvprograms import TVProgramms
-from sources.tmdb import TMDB
+from pathlib import Path
 
 st.set_page_config(page_title="CineDiscovery", page_icon="🎬", layout="wide")
 
@@ -14,41 +12,35 @@ st.markdown(
 )
 st.divider()
 
-db.init()
+DATA_FILE = Path(__file__).parent / "data" / "films.json"
 
 COLS = ["Date", "Time", "Channel", "Title", "Streaming", "Purchase", "Rent", "Availability"]
 VISIBLE_COLS = ["Date", "Time", "Channel", "Title", "Availability"]
 COLUMN_CONFIG = {c: st.column_config.TextColumn(c) for c in VISIBLE_COLS}
 
 
-@st.cache_data(ttl=timedelta(days=365), show_spinner=False)
-def _purge_old_cache():
-    db.purge_old()
-
-
-@st.cache_data(show_spinner="Fetching TV schedule...", ttl=timedelta(hours=24))
-def get_tv_schedule():
-    return TVProgramms().get_all_films()
-
-
-def _make_row(day, number, time, title, channel, cached):
-    date_str = f"{day} {number}"
-    if cached is None:
-        return [date_str, time, channel, title, "⏳", "⏳", "⏳", "⏳ Fetching..."]
-    streaming, purchase, rent = cached
-    if streaming is None and purchase is None and rent is None:
-        return [date_str, time, channel, title, "Not found on TMDB", "-", "-", "⚪Not found on TMDB"]
-    s = ", ".join(streaming) if streaming else "-"
-    b = ", ".join(purchase) if purchase else "-"
-    r = ", ".join(rent) if rent else "-"
-    total = len(set((streaming or []) + (purchase or []) + (rent or [])))
-    if not streaming and not purchase and not rent:
-        availability = "🟢Only on TV"
-    elif streaming:
-        availability = "🟠Available on platforms"
-    else:
-        availability = "🔵Pay only"
-    return [date_str, time, channel, title, s, b, r, availability]
+@st.cache_data(show_spinner="Loading film data...", ttl=3600)
+def load_data():
+    if not DATA_FILE.exists():
+        return pd.DataFrame(columns=COLS), None
+    with DATA_FILE.open(encoding="utf-8") as f:
+        data = json.load(f)
+    rows = []
+    for film in data.get("films", []):
+        streaming = film.get("streaming") or []
+        purchase = film.get("purchase") or []
+        rent = film.get("rent") or []
+        rows.append([
+            film["date"],
+            film["time"],
+            film["channel"],
+            film["title"],
+            ", ".join(streaming) if streaming else "-",
+            ", ".join(purchase) if purchase else "-",
+            ", ".join(rent) if rent else "-",
+            film.get("availability", ""),
+        ])
+    return pd.DataFrame(rows, columns=COLS), data.get("generated_at")
 
 
 def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availability):
@@ -81,22 +73,15 @@ def _show_film_details(row):
         st.write(row["Rent"])
 
 
-# ── Load TV schedule + cache ────────────────────────────────────────────────
-_purge_old_cache()
-films = get_tv_schedule()
-cache = db.get_all()
+# ── Load data ────────────────────────────────────────────────────────────────
+df, generated_at = load_data()
 
-rows = [
-    _make_row(day, number, time, title, channel, cache.get(title.lower()))
-    for day, number, time, title, channel in films
-]
-df = pd.DataFrame(rows, columns=COLS)
+if df.empty:
+    st.warning("No data available yet. The scheduled scraper has not run yet.")
+    st.stop()
 
-uncached = [
-    (i, day, number, time, title, channel)
-    for i, (day, number, time, title, channel) in enumerate(films)
-    if title.lower() not in cache
-]
+if generated_at:
+    st.caption(f"Data updated: {generated_at[:16].replace('T', ' ')} UTC")
 
 if "dialog_row_key" not in st.session_state:
     st.session_state.dialog_row_key = None
@@ -113,52 +98,29 @@ with col3:
     days_opts = ["All"] + df["Date"].unique().tolist()
     selected_day = st.selectbox("Date", days_opts)
 with col4:
-    avail_opts = ["All"] + sorted(
-        df[~df["Availability"].str.startswith("⏳")]["Availability"].dropna().unique().tolist()
-    )
+    avail_opts = ["All"] + sorted(df["Availability"].dropna().unique().tolist())
     selected_availability = st.selectbox("Availability", avail_opts)
 
-# ── Table (live-updating placeholders) ──────────────────────────────────────
-count_ph = st.empty()
-table_ph = st.empty()
-
-def _render(dataframe, _n=[0]):
-    _n[0] += 1
-    filtered = _apply_filters(dataframe, search_title, selected_channel, selected_day, selected_availability)
-    count_ph.markdown(f"**{len(filtered)} films**")
-    event = table_ph.dataframe(
-        filtered[VISIBLE_COLS],
-        hide_index=True,
-        column_config=COLUMN_CONFIG,
-        on_select="rerun",
-        selection_mode="single-row",
-        key=f"main_table_{_n[0]}",
-    )
-    selected = event.selection.rows
-    if selected and selected[0] < len(filtered):
-        row = filtered.iloc[selected[0]]
-        new_key = (row["Title"], row["Date"], row["Time"])
-        if new_key != st.session_state.dialog_row_key:
-            st.session_state.dialog_row_key = new_key
-            _show_film_details(row)
-    else:
-        st.session_state.dialog_row_key = None
-
-
-_render(df)
-
-# ── Background fetch for uncached titles ────────────────────────────────────
-if uncached:
-    tmdb = TMDB()
-    progress = st.progress(0, f"Fetching {len(uncached)} films from TMDB...")
-    for step, (i, day, number, time, title, channel) in enumerate(uncached):
-        streaming, purchase, rent = tmdb.get_providers(title)
-        db.save(title, streaming, purchase, rent)
-        rows[i] = _make_row(day, number, time, title, channel, (streaming, purchase, rent))
-        df = pd.DataFrame(rows, columns=COLS)
-        _render(df)
-        progress.progress((step + 1) / len(uncached))
-    progress.empty()
+# ── Table ────────────────────────────────────────────────────────────────────
+filtered = _apply_filters(df, search_title, selected_channel, selected_day, selected_availability)
+st.markdown(f"**{len(filtered)} films**")
+event = st.dataframe(
+    filtered[VISIBLE_COLS],
+    hide_index=True,
+    column_config=COLUMN_CONFIG,
+    on_select="rerun",
+    selection_mode="single-row",
+    key="main_table",
+)
+selected_rows = event.selection.rows
+if selected_rows and selected_rows[0] < len(filtered):
+    row = filtered.iloc[selected_rows[0]]
+    new_key = (row["Title"], row["Date"], row["Time"])
+    if new_key != st.session_state.dialog_row_key:
+        st.session_state.dialog_row_key = new_key
+        _show_film_details(row)
+else:
+    st.session_state.dialog_row_key = None
 
 # ── About / Credits ──────────────────────────────────────────────────────────
 st.divider()
