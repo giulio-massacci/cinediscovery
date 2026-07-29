@@ -1,6 +1,8 @@
 import json
+import urllib.parse
 import streamlit as st
 import pandas as pd
+from datetime import datetime, timedelta
 from pathlib import Path
 
 st.set_page_config(page_title="CineDiscovery", page_icon="🎬", layout="wide")
@@ -14,9 +16,9 @@ st.divider()
 DATA_FILE = Path(__file__).parent / "data" / "films.json"
 
 COLS = ["Date", "Time", "Channel", "Title", "Streaming", "Purchase", "Rent", "Availability", "Rating", "Director", "Details"]
-VISIBLE_COLS = ["Date", "Time", "Channel", "Title", "Director", "Availability", "Rating", "Details"]
+VISIBLE_COLS = ["Title", "Director", "Time", "Channel", "Availability", "Rating", "Details"]
 COLUMN_CONFIG = {
-    **{c: st.column_config.TextColumn(c) for c in ["Date", "Time", "Channel", "Title", "Availability"]},
+    **{c: st.column_config.TextColumn(c) for c in ["Time", "Channel", "Title", "Availability", "Director"]},
     "Rating": st.column_config.NumberColumn("Rating", format="⭐ %.1f", min_value=0, max_value=10),
     "Details": st.column_config.LinkColumn("Details", display_text="🔗 Link", width="small"),
 }
@@ -62,19 +64,96 @@ def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availabili
     return f
 
 
+def _parse_film_datetime(film_date: str, film_time: str, ref_iso: str) -> datetime | None:
+    """Parse 'Mar 28' + '21:09' into a datetime using generated_at for month/year context."""
+    try:
+        ref = datetime.fromisoformat(ref_iso)
+        day_num = int(film_date.split()[-1])
+        month, year = ref.month, ref.year
+        # If the film day is more than 7 days before the reference day, it belongs to the next month
+        if day_num < ref.day - 7:
+            month = month % 12 + 1
+            if month == 1:
+                year += 1
+        return datetime(year, month, day_num, int(film_time[:2]), int(film_time[3:5]))
+    except Exception:
+        return None
+
+
+def _google_calendar_url(row, ref_iso: str) -> str | None:
+    dt = _parse_film_datetime(row["Date"], row["Time"], ref_iso)
+    if dt is None:
+        return None
+    dt_end = dt + timedelta(hours=2)
+    fmt = "%Y%m%dT%H%M%S"
+    text = urllib.parse.quote(row["Title"])
+    details_parts = [f"Canale: {row['Channel']}"]
+    if row["Director"] not in ("-", ""):
+        details_parts.append(f"Regia: {row['Director']}")
+    if row["Availability"]:
+        details_parts.append(row["Availability"])
+    details = urllib.parse.quote("\n".join(details_parts))
+    return (
+        f"https://calendar.google.com/calendar/r/eventedit"
+        f"?text={text}&dates={dt.strftime(fmt)}/{dt_end.strftime(fmt)}&details={details}"
+    )
+
+
+def _build_ics(row, ref_iso: str) -> str | None:
+    dt = _parse_film_datetime(row["Date"], row["Time"], ref_iso)
+    if dt is None:
+        return None
+    dt_end = dt + timedelta(hours=2)
+    fmt = "%Y%m%dT%H%M%S"
+    description = f"Canale: {row['Channel']}"
+    if row["Director"] not in ("-", ""):
+        description += f"\\nRegia: {row['Director']}"
+    if row["Availability"]:
+        description += f"\\n{row['Availability']}"
+    return (
+        "BEGIN:VCALENDAR\r\n"
+        "VERSION:2.0\r\n"
+        "PRODID:-//CineDiscovery//EN\r\n"
+        "BEGIN:VEVENT\r\n"
+        f"DTSTART:{dt.strftime(fmt)}\r\n"
+        f"DTEND:{dt_end.strftime(fmt)}\r\n"
+        f"SUMMARY:{row['Title']}\r\n"
+        f"DESCRIPTION:{description}\r\n"
+        "END:VEVENT\r\n"
+        "END:VCALENDAR\r\n"
+    )
+
+
 @st.dialog("📽️ Streaming & Availability Details")
-def _show_film_details(row):
+def _show_film_details(row, ref_iso: str | None = None):
     st.subheader(row["Title"])
     meta_parts = [f"{row['Date']} · {row['Time']} · {row['Channel']}"]
     if row["Director"] and row["Director"] != "-":
-        meta_parts.append(f"Regia: {row['Director']}")
+        meta_parts.append(f"Director: {row['Director']}")
     st.caption(" · ".join(meta_parts))
     rating = row["Rating"]
     if rating is not None and str(rating) not in ("", "nan"):
         st.caption(f"⭐ {rating}/10")
     tmdb_url = row["Details"]
-    if tmdb_url:
-        st.link_button("🔗 Apri su TMDB", tmdb_url)
+    btn_col1, btn_col2, btn_col3 = st.columns([1, 1, 1])
+    with btn_col1:
+        if tmdb_url:
+            st.link_button("🔗 Details", tmdb_url)
+    if ref_iso:
+        with btn_col2:
+            gcal_url = _google_calendar_url(row, ref_iso)
+            if gcal_url:
+                st.link_button("📅 Add to Google Calendar", gcal_url)
+        with btn_col3:
+            ics = _build_ics(row, ref_iso)
+            if ics:
+                safe_title = "".join(c for c in row["Title"] if c.isalnum() or c in " _-").strip().replace(" ", "_")
+                st.download_button(
+                    "⬇️ Download .ics",
+                    data=ics,
+                    file_name=f"{safe_title}.ics",
+                    mime="text/calendar",
+                )
     st.divider()
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -153,37 +232,46 @@ if not topX.empty:
 
 # ── Filters ─────────────────────────────────────────────────────────────────
 st.subheader("Filters")
-col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+col1, col2, col3 = st.columns([1, 1, 1])
 with col1:
     search_title = st.text_input("Title", placeholder="Search by title...")
 with col2:
     channels = ["All"] + sorted(df["Channel"].dropna().unique().tolist())
     selected_channel = st.selectbox("Channel", channels)
 with col3:
-    days_opts = ["All"] + df["Date"].unique().tolist()
-    selected_day = st.selectbox("Date", days_opts)
-with col4:
     avail_opts = ["All"] + sorted(df["Availability"].dropna().unique().tolist())
     selected_availability = st.selectbox("Availability", avail_opts)
 
-# ── Table ────────────────────────────────────────────────────────────────────
-filtered = _apply_filters(df, search_title, selected_channel, selected_day, selected_availability)
-st.markdown(f"**{len(filtered)} films**")
-event = st.dataframe(
-    filtered[VISIBLE_COLS],
-    hide_index=True,
-    column_config=COLUMN_CONFIG,
-    on_select="rerun",
-    selection_mode="single-row",
-    key="main_table",
-)
-selected_rows = event.selection.rows
-if selected_rows and selected_rows[0] < len(filtered):
-    row = filtered.iloc[selected_rows[0]]
-    new_key = (row["Title"], row["Date"], row["Time"])
+# ── Date tabs + Table ────────────────────────────────────────────────────────
+days_opts = ["All"] + df["Date"].unique().tolist()
+day_tabs = st.tabs(days_opts)
+selected_film_row = None
+
+VISIBLE_COLS_ALL = ["Date"] + VISIBLE_COLS
+COLUMN_CONFIG_ALL = {**COLUMN_CONFIG, "Date": st.column_config.TextColumn("Date")}
+
+for tab, day in zip(day_tabs, days_opts):
+    with tab:
+        filtered = _apply_filters(df, search_title, selected_channel, day, selected_availability)
+        st.markdown(f"**{len(filtered)} films**")
+        cols_to_show = VISIBLE_COLS_ALL if day == "All" else VISIBLE_COLS
+        col_cfg = COLUMN_CONFIG_ALL if day == "All" else COLUMN_CONFIG
+        ev = st.dataframe(
+            filtered[cols_to_show],
+            hide_index=True,
+            column_config=col_cfg,
+            on_select="rerun",
+            selection_mode="single-row",
+            key=f"table_{day}",
+        )
+        if ev.selection.rows and ev.selection.rows[0] < len(filtered):
+            selected_film_row = filtered.iloc[ev.selection.rows[0]]
+
+if selected_film_row is not None:
+    new_key = (selected_film_row["Title"], selected_film_row["Date"], selected_film_row["Time"])
     if new_key != st.session_state.dialog_row_key:
         st.session_state.dialog_row_key = new_key
-        _show_film_details(row)
+        _show_film_details(selected_film_row, generated_at)
 else:
     st.session_state.dialog_row_key = None
 

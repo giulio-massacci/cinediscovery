@@ -12,7 +12,9 @@ CineDiscovery scrapes the Italian weekly TV schedule and cross-references every 
 - 🔍 **TMDB enrichment** — streaming, purchase, and rental availability for the Italian market; plus rating, director, and link to the TMDB page
 - 🏆 **Top films cards** — visual card grid highlighting the 15 highest-rated films of the week, color-coded by availability and clickable to open TMDB
 - 📊 **Top 20 rating chart** — horizontal bar chart of the top 20 films by TMDB rating
-- 🎛️ **Live filters** — filter by title, channel, date, or availability status
+- 🎛️ **Live filters** — filter by title, channel, or availability status
+- 📅 **Day tabs** — browse films day by day via tabs; an "All" tab shows the full week with the Date column visible
+- 📆 **Calendar integration** — from any film's detail dialog, add it directly to **Google Calendar** (one-click link, no login required) or **download an `.ics` file** compatible with Apple Calendar, Outlook, and any standard calendar app
 - 🗓️ **Chronological ordering** — films sorted correctly even across month boundaries
 - 🔄 **Resilient fetching** — automatic retry with exponential backoff on network errors
 - ⚙️ **GitHub Actions automation** — daily scrape runs as a scheduled workflow, commits `data/films.json` to the repo; the Streamlit app only reads static data
