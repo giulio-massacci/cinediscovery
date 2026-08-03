@@ -25,7 +25,7 @@ class TVProgramms:
                 )
                 r.raise_for_status()
                 return BeautifulSoup(r.text, "lxml")
-            except (requests.ConnectionError, requests.Timeout) as e:
+            except (requests.ConnectionError, requests.Timeout, requests.exceptions.SSLError) as e:
                 if attempt < retries - 1:
                     time.sleep(backoff ** attempt)
                 else:
