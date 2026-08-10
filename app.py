@@ -181,7 +181,12 @@ if "dialog_row_key" not in st.session_state:
     st.session_state.dialog_row_key = None
 
 # ── Top X Cards ─────────────────────────────────────────────────────────────
-topX = df[pd.notna(df["Rating"])].nlargest(15, "Rating").reset_index(drop=True)
+topX = (
+    df[pd.notna(df["Rating"])]
+    .drop_duplicates(subset="Title", keep="first")
+    .nlargest(15, "Rating")
+    .reset_index(drop=True)
+)
 if not topX.empty:
     st.subheader("🏆 Top 15 films this week")
     _AVAIL_COLOR = {

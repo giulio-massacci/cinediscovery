@@ -1,5 +1,8 @@
 import time
+import ssl
+import certifi
 import requests
+from requests.adapters import HTTPAdapter
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from dateutil import relativedelta
@@ -9,6 +12,17 @@ from sources.utils import CINEUtils
 
 URL = config.URL_PROGRAMS
 
+
+class _NoHostnameCheckAdapter(HTTPAdapter):
+    # site cert is issued for autoconfig.programmitv.com, not www.programmitv.com
+    def init_poolmanager(self, num_pools, maxsize, block=False, **kw):
+        ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+        ctx.check_hostname = False
+        ctx.load_verify_locations(certifi.where())
+        kw['ssl_context'] = ctx
+        super().init_poolmanager(num_pools, maxsize, block=block, **kw)
+
+
 HEADERS = {
     "User-Agent": "CineDiscovery-bot/1.0 (educational project; github.com/giulio-massacci/cinediscovery)"
 }
@@ -16,13 +30,11 @@ HEADERS = {
 class TVProgramms:
 
     def _fetch_soup(self, day, retries=3, backoff=2):
+        session = requests.Session()
+        session.mount("https://", _NoHostnameCheckAdapter())
         for attempt in range(retries):
             try:
-                r = requests.get(
-                    URL + day,
-                    headers=HEADERS,
-                    timeout=30
-                )
+                r = session.get(URL + day, headers=HEADERS, timeout=30)
                 r.raise_for_status()
                 return BeautifulSoup(r.text, "lxml")
             except (requests.ConnectionError, requests.Timeout, requests.exceptions.SSLError) as e:
