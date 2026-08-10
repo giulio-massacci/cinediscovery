@@ -51,7 +51,19 @@ def load_data():
     return pd.DataFrame(rows, columns=COLS), data.get("generated_at")
 
 
-def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availability):
+def _time_slot(time_str: str) -> str:
+    try:
+        h = int(time_str[:2])
+        if h >= 22:
+            return "Late night"
+        if h < 6:
+            return "After midnight"
+        return "Prime time"
+    except Exception:
+        return ""
+
+
+def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availability, sel_time_slot):
     f = dataframe.copy()
     if search_title:
         f = f[f["Title"].str.contains(search_title, case=False, na=False)]
@@ -61,6 +73,8 @@ def _apply_filters(dataframe, search_title, sel_channel, sel_day, sel_availabili
         f = f[f["Date"] == sel_day]
     if sel_availability != "All":
         f = f[f["Availability"] == sel_availability]
+    if sel_time_slot != "All":
+        f = f[f["Time"].apply(_time_slot) == sel_time_slot]
     return f
 
 
@@ -237,7 +251,7 @@ if not topX.empty:
 
 # ── Filters ─────────────────────────────────────────────────────────────────
 st.subheader("Filters")
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 with col1:
     search_title = st.text_input("Title", placeholder="Search by title...")
 with col2:
@@ -246,6 +260,8 @@ with col2:
 with col3:
     avail_opts = ["All"] + sorted(df["Availability"].dropna().unique().tolist())
     selected_availability = st.selectbox("Availability", avail_opts)
+with col4:
+    selected_time_slot = st.selectbox("Time slot", ["All", "Prime time", "Late night", "After midnight"])
 
 # ── Date tabs + Table ────────────────────────────────────────────────────────
 days_opts = ["All"] + df["Date"].unique().tolist()
@@ -257,7 +273,7 @@ COLUMN_CONFIG_ALL = {**COLUMN_CONFIG, "Date": st.column_config.TextColumn("Date"
 
 for tab, day in zip(day_tabs, days_opts):
     with tab:
-        filtered = _apply_filters(df, search_title, selected_channel, day, selected_availability)
+        filtered = _apply_filters(df, search_title, selected_channel, day, selected_availability, selected_time_slot)
         st.markdown(f"**{len(filtered)} films**")
         cols_to_show = VISIBLE_COLS_ALL if day == "All" else VISIBLE_COLS
         col_cfg = COLUMN_CONFIG_ALL if day == "All" else COLUMN_CONFIG
