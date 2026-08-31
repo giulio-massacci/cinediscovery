@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T09:44:59+00:00",
+  "generated_at": "2026-08-31T11:24:56+00:00",
   "films": [
     {
       "day": "Lun",
@@ -670,7 +670,33 @@
       "day": "Mar",
       "number": "1",
       "date": "Mar 1",
-      "time": "21:10",
+      "time": "21:06",
+      "title": "Lara Croft: Tomb Raider",
+      "channel": "20",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 5.9,
+      "director": "Simon West",
+      "tmdb_url": "https://www.themoviedb.org/movie/1995"
+    },
+    {
+      "day": "Mar",
+      "number": "1",
+      "date": "Mar 1",
+      "time": "21:08",
       "title": "Il mandolino del capitano Corelli",
       "channel": "27 TWENTYSEVEN",
       "not_found": false,
@@ -735,32 +761,6 @@
       "rating": 6.9,
       "director": "George Marshall",
       "tmdb_url": "https://www.themoviedb.org/movie/76568"
-    },
-    {
-      "day": "Mar",
-      "number": "1",
-      "date": "Mar 1",
-      "time": "21:10",
-      "title": "Lara Croft: Tomb Raider",
-      "channel": "20",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 5.9,
-      "director": "Simon West",
-      "tmdb_url": "https://www.themoviedb.org/movie/1995"
     },
     {
       "day": "Mar",
@@ -983,34 +983,6 @@
       "day": "Mar",
       "number": "1",
       "date": "Mar 1",
-      "time": "23:06",
-      "title": "Cambio vita",
-      "channel": "27 TWENTYSEVEN",
-      "not_found": false,
-      "streaming": [
-        "Netflix"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 6.2,
-      "director": "David Dobkin",
-      "tmdb_url": "https://www.themoviedb.org/movie/49520"
-    },
-    {
-      "day": "Mar",
-      "number": "1",
-      "date": "Mar 1",
       "time": "23:15",
       "title": "Hitchcock",
       "channel": "LA7",
@@ -1065,6 +1037,34 @@
       "rating": 6.3,
       "director": "Tony Giglio",
       "tmdb_url": "https://www.themoviedb.org/movie/5289"
+    },
+    {
+      "day": "Mar",
+      "number": "1",
+      "date": "Mar 1",
+      "time": "23:25",
+      "title": "Cambio vita",
+      "channel": "27 TWENTYSEVEN",
+      "not_found": false,
+      "streaming": [
+        "Netflix"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 6.2,
+      "director": "David Dobkin",
+      "tmdb_url": "https://www.themoviedb.org/movie/49520"
     },
     {
       "day": "Mar",
@@ -2030,14 +2030,14 @@
       ],
       "availability": "🔵Pay only",
       "rating": 7.9,
-      "director": "Mike Fleiss, Mike Piscitelli",
+      "director": "Mike Piscitelli, Mike Fleiss",
       "tmdb_url": "https://www.themoviedb.org/movie/79201"
     },
     {
       "day": "Gio",
       "number": "3",
       "date": "Gio 3",
-      "time": "23:00",
+      "time": "22:54",
       "title": "Matrimonio al Sud",
       "channel": "CINE34",
       "not_found": false,
@@ -2256,7 +2256,7 @@
       "day": "Gio",
       "number": "3",
       "date": "Gio 3",
-      "time": "23:35",
+      "time": "23:37",
       "title": "In Time",
       "channel": "ITALIA 1",
       "not_found": false,
@@ -2407,7 +2407,7 @@
       "day": "Ven",
       "number": "4",
       "date": "Ven 4",
-      "time": "21:10",
+      "time": "21:06",
       "title": "Cronaca di una passione",
       "channel": "TV2000",
       "not_found": false,
@@ -2962,7 +2962,7 @@
       "day": "Sab",
       "number": "5",
       "date": "Sab 5",
-      "time": "21:09",
+      "time": "21:02",
       "title": "Le lettere di Madre Teresa",
       "channel": "TV2000",
       "not_found": false,
@@ -3337,32 +3337,7 @@
       "day": "Sab",
       "number": "5",
       "date": "Sab 5",
-      "time": "23:06",
-      "title": "Scent of a Woman - Profumo di donna",
-      "channel": "27 TWENTYSEVEN",
-      "not_found": false,
-      "streaming": [
-        "Amazon Prime Video",
-        "Infinity Selection Amazon Channel",
-        "Amazon Prime Video with Ads",
-        "The Film Club Amazon Channel"
-      ],
-      "purchase": [
-        "Amazon Video"
-      ],
-      "rent": [
-        "Amazon Video"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 7.8,
-      "director": "Martin Brest",
-      "tmdb_url": "https://www.themoviedb.org/movie/9475"
-    },
-    {
-      "day": "Sab",
-      "number": "5",
-      "date": "Sab 5",
-      "time": "23:12",
+      "time": "22:58",
       "title": "A piedi nudi nel parco",
       "channel": "TV2000",
       "not_found": false,
@@ -3385,6 +3360,31 @@
       "rating": 7.1,
       "director": "Gene Saks",
       "tmdb_url": "https://www.themoviedb.org/movie/17887"
+    },
+    {
+      "day": "Sab",
+      "number": "5",
+      "date": "Sab 5",
+      "time": "23:06",
+      "title": "Scent of a Woman - Profumo di donna",
+      "channel": "27 TWENTYSEVEN",
+      "not_found": false,
+      "streaming": [
+        "Amazon Prime Video",
+        "Infinity Selection Amazon Channel",
+        "Amazon Prime Video with Ads",
+        "The Film Club Amazon Channel"
+      ],
+      "purchase": [
+        "Amazon Video"
+      ],
+      "rent": [
+        "Amazon Video"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 7.8,
+      "director": "Martin Brest",
+      "tmdb_url": "https://www.themoviedb.org/movie/9475"
     },
     {
       "day": "Sab",
@@ -4166,22 +4166,6 @@
       "rating": 6.3,
       "director": "Terry Ingram",
       "tmdb_url": "https://www.themoviedb.org/movie/94563"
-    },
-    {
-      "day": "Dom",
-      "number": "6",
-      "date": "Dom 6",
-      "time": "23:30",
-      "title": "Il maratoneta",
-      "channel": "LA7",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 5.5,
-      "director": "Leone Pompucci",
-      "tmdb_url": "https://www.themoviedb.org/movie/580725"
     },
     {
       "day": "Dom",
