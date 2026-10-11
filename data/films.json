@@ -1,617 +1,6 @@
 {
-  "generated_at": "2026-10-10T10:59:45+00:00",
+  "generated_at": "2026-10-11T11:17:09+00:00",
   "films": [
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "00:02",
-      "title": "Giochi di potere",
-      "channel": "RETE 4",
-      "not_found": false,
-      "streaming": [
-        "Amazon Prime Video",
-        "Timvision",
-        "Infinity Selection Amazon Channel",
-        "Eagle No Limits Amazon Channel",
-        "Amazon Prime Video with Ads"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 6.2,
-      "director": "Per Fly",
-      "tmdb_url": "https://www.themoviedb.org/movie/476678"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "00:25",
-      "title": "Ipersonnia",
-      "channel": "RAI 3",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 6.0,
-      "director": "Alberto Mascia",
-      "tmdb_url": "https://www.themoviedb.org/movie/1001840"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "20:50",
-      "title": "Teo e Zodì - Un cammello per amico",
-      "channel": "RAI GULP",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 6.7,
-      "director": "Eric Barbier",
-      "tmdb_url": "https://www.themoviedb.org/movie/1000521"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:10",
-      "title": "Giustizia a tutti i costi",
-      "channel": "20",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 6.2,
-      "director": "John Flynn",
-      "tmdb_url": "https://www.themoviedb.org/movie/14362"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:10",
-      "title": "Papillon",
-      "channel": "RAI MOVIE",
-      "not_found": false,
-      "streaming": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Amazon Video"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 7.3,
-      "director": "Michael Noer",
-      "tmdb_url": "https://www.themoviedb.org/movie/433498"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:14",
-      "title": "Il collezionista",
-      "channel": "IRIS",
-      "not_found": false,
-      "streaming": [
-        "Paramount Plus",
-        "Infinity Selection Amazon Channel",
-        "Paramount+ Amazon Channel"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 6.5,
-      "director": "Gary Fleder",
-      "tmdb_url": "https://www.themoviedb.org/movie/9437"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:15",
-      "title": "I dieci comandamenti",
-      "channel": "27 TWENTYSEVEN",
-      "not_found": false,
-      "streaming": [
-        "Paramount Plus",
-        "Paramount+ Amazon Channel"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 7.8,
-      "director": "Cecil B. DeMille",
-      "tmdb_url": "https://www.themoviedb.org/movie/6844"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:15",
-      "title": "Inga Lindstrom - La donna che sussurrava ai cavalli",
-      "channel": "LA5",
-      "not_found": true,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "⚪Not found on TMDB",
-      "rating": null,
-      "director": null,
-      "tmdb_url": ""
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:15",
-      "title": "L'insegnante va in collegio",
-      "channel": "CINE34",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 4.7,
-      "director": "Mariano Laurenti",
-      "tmdb_url": "https://www.themoviedb.org/movie/106992"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:15",
-      "title": "La spia che mi amava",
-      "channel": "LA7 CINEMA",
-      "not_found": false,
-      "streaming": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 6.8,
-      "director": "Lewis Gilbert",
-      "tmdb_url": "https://www.themoviedb.org/movie/691"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:15",
-      "title": "Poirot: La parola alla difesa",
-      "channel": "TOP CRIME",
-      "not_found": true,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "⚪Not found on TMDB",
-      "rating": null,
-      "director": null,
-      "tmdb_url": ""
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:20",
-      "title": "Blood Star",
-      "channel": "RAI 4",
-      "not_found": false,
-      "streaming": [
-        "MIDNIGHT FACTORY Amazon Channel"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 5.7,
-      "director": "Lawrence Jacomelli",
-      "tmdb_url": "https://www.themoviedb.org/movie/1304106"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:23",
-      "title": "L'era glaciale 2 - Il disgelo",
-      "channel": "ITALIA 1",
-      "not_found": false,
-      "streaming": [
-        "Netflix",
-        "Disney Plus",
-        "Timvision"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 6.7,
-      "director": "Carlos Saldanha",
-      "tmdb_url": "https://www.themoviedb.org/movie/950"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:33",
-      "title": "Unknown - Senza identità",
-      "channel": "RETE 4",
-      "not_found": false,
-      "streaming": [
-        "Timvision"
-      ],
-      "purchase": [
-        "Google Play Movies",
-        "Rakuten TV",
-        "CHILI"
-      ],
-      "rent": [],
-      "availability": "🟠Available on platforms",
-      "rating": 6.7,
-      "director": "Jaume Collet Serra",
-      "tmdb_url": "https://www.themoviedb.org/movie/48138"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "21:55",
-      "title": "I delitti del BarLume - Donne con le palle",
-      "channel": "TV8",
-      "not_found": false,
-      "streaming": [
-        "Now TV"
-      ],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟠Available on platforms",
-      "rating": 6.9,
-      "director": "Roan Johnson",
-      "tmdb_url": "https://www.themoviedb.org/movie/776065"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "22:55",
-      "title": "Godzilla vs. Kong",
-      "channel": "20",
-      "not_found": false,
-      "streaming": [
-        "Netflix",
-        "HBO Max Amazon Channel",
-        "HBO Max"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 7.5,
-      "director": "Adam Wingard",
-      "tmdb_url": "https://www.themoviedb.org/movie/399566"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:02",
-      "title": "The Silencing - Senza voce",
-      "channel": "RAI 4",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 6.5,
-      "director": "Robin Pront",
-      "tmdb_url": "https://www.themoviedb.org/movie/603119"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:05",
-      "title": "La vedova inconsolabile ringrazia quanti la consolarono",
-      "channel": "CINE34",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 4.6,
-      "director": "Mariano Laurenti",
-      "tmdb_url": "https://www.themoviedb.org/movie/134835"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:13",
-      "title": "Sonic 2 - Il film",
-      "channel": "ITALIA 1",
-      "not_found": false,
-      "streaming": [
-        "Paramount Plus",
-        "Timvision",
-        "Paramount+ Amazon Channel"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 7.4,
-      "director": "Jeff Fowler",
-      "tmdb_url": "https://www.themoviedb.org/movie/675353"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:29",
-      "title": "Il tulipano nero",
-      "channel": "27 TWENTYSEVEN",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 6.3,
-      "director": "Christian-Jaque",
-      "tmdb_url": "https://www.themoviedb.org/movie/12539"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:35",
-      "title": "Corsa contro il tempo - The Desperate Hour",
-      "channel": "IRIS",
-      "not_found": false,
-      "streaming": [
-        "Timvision",
-        "MYmovies One"
-      ],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Rakuten TV",
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 6.0,
-      "director": "Phillip Noyce",
-      "tmdb_url": "https://www.themoviedb.org/movie/764835"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:40",
-      "title": "Diabolique",
-      "channel": "LA7 CINEMA",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Amazon Video"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 5.5,
-      "director": "Jeremiah S. Chechik",
-      "tmdb_url": "https://www.themoviedb.org/movie/10988"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:43",
-      "title": "I.Q. - Genio per amore",
-      "channel": "TV2000",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Amazon Video",
-        "CHILI"
-      ],
-      "rent": [
-        "Amazon Video",
-        "CHILI"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 6.0,
-      "director": "Fred Schepisi",
-      "tmdb_url": "https://www.themoviedb.org/movie/11777"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:45",
-      "title": "La battaglia di Midway",
-      "channel": "RAI MOVIE",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Amazon Video"
-      ],
-      "availability": "🔵Pay only",
-      "rating": 6.6,
-      "director": "Jack Smight",
-      "tmdb_url": "https://www.themoviedb.org/movie/11422"
-    },
-    {
-      "day": "Sab",
-      "number": "10",
-      "date": "Sab 10",
-      "time": "23:55",
-      "title": "I delitti del Barlume - Ritorno a Pineta",
-      "channel": "TV8",
-      "not_found": false,
-      "streaming": [
-        "Now TV"
-      ],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟠Available on platforms",
-      "rating": 6.6,
-      "director": "Roan Johnson",
-      "tmdb_url": "https://www.themoviedb.org/movie/776068"
-    },
     {
       "day": "Dom",
       "number": "11",
@@ -706,7 +95,7 @@
         "Amazon Video"
       ],
       "availability": "🔵Pay only",
-      "rating": 7.0,
+      "rating": 6.9,
       "director": "Gary Fleder",
       "tmdb_url": "https://www.themoviedb.org/movie/11329"
     },
@@ -718,13 +107,28 @@
       "title": "Sulle ali dell'avventura",
       "channel": "LA5",
       "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 6.7,
-      "director": "Phil Weinstein",
-      "tmdb_url": "https://www.themoviedb.org/movie/34942"
+      "streaming": [
+        "Timvision"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 7.5,
+      "director": "Nicolas Vanier",
+      "tmdb_url": "https://www.themoviedb.org/movie/589982"
     },
     {
       "day": "Dom",
@@ -1189,10 +593,12 @@
       "title": "Achille Lauro - La crociera del terrore",
       "channel": "RETE 4",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [],
       "rent": [],
-      "availability": "🟢Only on TV",
+      "availability": "🟠Available on platforms",
       "rating": 8.7,
       "director": "Simone Manetti",
       "tmdb_url": "https://www.themoviedb.org/movie/1546172"
@@ -1205,27 +611,13 @@
       "title": "Odio l'estate",
       "channel": "CINE34",
       "not_found": false,
-      "streaming": [
-        "Netflix",
-        "Sky Go",
-        "Timvision",
-        "Now TV",
-        "Infinity Selection Amazon Channel"
-      ],
-      "purchase": [
-        "Timvision",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "rent": [
-        "Apple TV Store",
-        "Rakuten TV",
-        "Amazon Video"
-      ],
-      "availability": "🟠Available on platforms",
-      "rating": 7.0,
-      "director": "Massimo Venier",
-      "tmdb_url": "https://www.themoviedb.org/movie/606954"
+      "streaming": [],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟢Only on TV",
+      "rating": 2.0,
+      "director": "Ciro De Caro",
+      "tmdb_url": "https://www.themoviedb.org/movie/872884"
     },
     {
       "day": "Lun",
@@ -1447,6 +839,22 @@
       "day": "Lun",
       "number": "12",
       "date": "Lun 12",
+      "time": "21:23",
+      "title": "Come Closer",
+      "channel": "RAI 5",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟢Only on TV",
+      "rating": 8.0,
+      "director": "Abigail Metcalf, Olivia Charis",
+      "tmdb_url": "https://www.themoviedb.org/movie/1476702"
+    },
+    {
+      "day": "Lun",
+      "number": "12",
+      "date": "Lun 12",
       "time": "21:28",
       "title": "Retribution",
       "channel": "ITALIA 1",
@@ -1511,7 +919,7 @@
       "rent": [],
       "availability": "🟢Only on TV",
       "rating": null,
-      "director": "Peter Greenaway, Saskia Boddeke",
+      "director": "Saskia Boddeke, Peter Greenaway",
       "tmdb_url": "https://www.themoviedb.org/movie/982868"
     },
     {
@@ -1564,6 +972,22 @@
       "rating": 6.2,
       "director": "Florent-Emilio Siri",
       "tmdb_url": "https://www.themoviedb.org/movie/1154215"
+    },
+    {
+      "day": "Lun",
+      "number": "12",
+      "date": "Lun 12",
+      "time": "23:20",
+      "title": "Con gli occhi dell'assassino",
+      "channel": "LA7 CINEMA",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟢Only on TV",
+      "rating": 6.3,
+      "director": "Corrado Colombo",
+      "tmdb_url": "https://www.themoviedb.org/movie/626897"
     },
     {
       "day": "Lun",
@@ -1719,7 +1143,9 @@
       "title": "Divergent",
       "channel": "ITALIA 2",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -1734,7 +1160,7 @@
         "Rakuten TV",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 6.9,
       "director": "Neil Burger",
       "tmdb_url": "https://www.themoviedb.org/movie/157350"
@@ -2296,15 +1722,17 @@
       "title": "Le quattro piume",
       "channel": "TV2000",
       "not_found": false,
-      "streaming": [
-        "Artiflix"
+      "streaming": [],
+      "purchase": [
+        "Amazon Video"
       ],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟠Available on platforms",
-      "rating": 7.1,
-      "director": "Zoltan Korda",
-      "tmdb_url": "https://www.themoviedb.org/movie/10568"
+      "rent": [
+        "Amazon Video"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 6.7,
+      "director": "Shekhar Kapur",
+      "tmdb_url": "https://www.themoviedb.org/movie/9093"
     },
     {
       "day": "Mer",
@@ -2683,7 +2111,9 @@
       "title": "Divergent",
       "channel": "ITALIA 2",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -2698,7 +2128,7 @@
         "Rakuten TV",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 6.9,
       "director": "Neil Burger",
       "tmdb_url": "https://www.themoviedb.org/movie/157350"
@@ -2946,7 +2376,8 @@
       "channel": "20",
       "not_found": false,
       "streaming": [
-        "Disney Plus"
+        "Disney Plus",
+        "Timvision"
       ],
       "purchase": [
         "Apple TV Store",
@@ -3363,7 +2794,7 @@
       ],
       "availability": "🔵Pay only",
       "rating": 7.9,
-      "director": "Mike Piscitelli, Mike Fleiss",
+      "director": "Mike Fleiss, Mike Piscitelli",
       "tmdb_url": "https://www.themoviedb.org/movie/79201"
     },
     {
@@ -3422,7 +2853,9 @@
       "title": "The Lake - La creatura del lago",
       "channel": "ITALIA 2",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -3435,7 +2868,7 @@
         "Timvision",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 5.9,
       "director": "Lee Thongkham",
       "tmdb_url": "https://www.themoviedb.org/movie/709716"
@@ -3504,7 +2937,9 @@
       "title": "Godzilla e Kong - Il nuovo impero",
       "channel": "20",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -3519,7 +2954,7 @@
         "Rakuten TV",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 7.0,
       "director": "Adam Wingard",
       "tmdb_url": "https://www.themoviedb.org/movie/823464"
@@ -3965,7 +3400,9 @@
       "title": "Prima o poi me lo sposo",
       "channel": "LA5",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -3976,7 +3413,7 @@
         "Google Play Movies",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 6.8,
       "director": "Frank Coraci",
       "tmdb_url": "https://www.themoviedb.org/movie/11003"
@@ -3990,7 +3427,8 @@
       "channel": "20",
       "not_found": false,
       "streaming": [
-        "Disney Plus"
+        "Disney Plus",
+        "Timvision"
       ],
       "purchase": [
         "Apple TV Store",
@@ -4083,6 +3521,22 @@
       "day": "Sab",
       "number": "17",
       "date": "Sab 17",
+      "time": "00:30",
+      "title": "Happy Holidays",
+      "channel": "RAI 3",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟢Only on TV",
+      "rating": 5.2,
+      "director": "James Ferguson",
+      "tmdb_url": "https://www.themoviedb.org/movie/273791"
+    },
+    {
+      "day": "Sab",
+      "number": "17",
+      "date": "Sab 17",
       "time": "01:40",
       "title": "After",
       "channel": "RAI MOVIE",
@@ -4120,6 +3574,7 @@
       "channel": "ITALIA 2",
       "not_found": false,
       "streaming": [
+        "Timvision",
         "Infinity Selection Amazon Channel"
       ],
       "purchase": [
@@ -4354,22 +3809,6 @@
       "day": "Sab",
       "number": "17",
       "date": "Sab 17",
-      "time": "21:15",
-      "title": "Omicron",
-      "channel": "RAI STORIA",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": 6.6,
-      "director": "Ugo Gregoretti",
-      "tmdb_url": "https://www.themoviedb.org/movie/47356"
-    },
-    {
-      "day": "Sab",
-      "number": "17",
-      "date": "Sab 17",
       "time": "21:20",
       "title": "Girl",
       "channel": "RAI 4",
@@ -4480,22 +3919,6 @@
       "day": "Sab",
       "number": "17",
       "date": "Sab 17",
-      "time": "22:40",
-      "title": "Verso l'alto - Pier Giorgio Frassati",
-      "channel": "RAI STORIA",
-      "not_found": false,
-      "streaming": [],
-      "purchase": [],
-      "rent": [],
-      "availability": "🟢Only on TV",
-      "rating": null,
-      "director": "Daniela Gurrieri",
-      "tmdb_url": "https://www.themoviedb.org/movie/1264295"
-    },
-    {
-      "day": "Sab",
-      "number": "17",
-      "date": "Sab 17",
       "time": "22:42",
       "title": "Un sacchetto di biglie",
       "channel": "TV2000",
@@ -4549,7 +3972,9 @@
       "title": "The Lake - La creatura del lago",
       "channel": "ITALIA 2",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -4562,7 +3987,7 @@
         "Timvision",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 5.9,
       "director": "Lee Thongkham",
       "tmdb_url": "https://www.themoviedb.org/movie/709716"
@@ -4691,7 +4116,9 @@
       "title": "Godzilla e Kong - Il nuovo impero",
       "channel": "20",
       "not_found": false,
-      "streaming": [],
+      "streaming": [
+        "Timvision"
+      ],
       "purchase": [
         "Apple TV Store",
         "Google Play Movies",
@@ -4706,7 +4133,7 @@
         "Rakuten TV",
         "Amazon Video"
       ],
-      "availability": "🔵Pay only",
+      "availability": "🟠Available on platforms",
       "rating": 7.0,
       "director": "Adam Wingard",
       "tmdb_url": "https://www.themoviedb.org/movie/823464"
@@ -4734,6 +4161,515 @@
       "rating": 7.5,
       "director": "Cameron Crowe",
       "tmdb_url": "https://www.themoviedb.org/movie/786"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "00:50",
+      "title": "C'eravamo tanto amati",
+      "channel": "RETE 4",
+      "not_found": false,
+      "streaming": [
+        "Sky Go",
+        "Now TV",
+        "CineAutore Amazon Channel",
+        "The Film Club Amazon Channel"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Amazon Video"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Amazon Video"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 8.3,
+      "director": "Ettore Scola",
+      "tmdb_url": "https://www.themoviedb.org/movie/42269"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:00",
+      "title": "Il pesce innamorato",
+      "channel": "CINE34",
+      "not_found": false,
+      "streaming": [
+        "Sky Go",
+        "Now TV",
+        "Infinity Selection Amazon Channel"
+      ],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟠Available on platforms",
+      "rating": 5.7,
+      "director": "Leonardo Pieraccioni",
+      "tmdb_url": "https://www.themoviedb.org/movie/60203"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:07",
+      "title": "Run All Night - Una notte per sopravvivere",
+      "channel": "20",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 6.4,
+      "director": "Jaume Collet Serra",
+      "tmdb_url": "https://www.themoviedb.org/movie/241554"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:10",
+      "title": "Milano Palermo - Il ritorno",
+      "channel": "RAI MOVIE",
+      "not_found": false,
+      "streaming": [
+        "Full Action Amazon Channel",
+        "The Film Club Amazon Channel"
+      ],
+      "purchase": [
+        "Amazon Video"
+      ],
+      "rent": [
+        "Amazon Video"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 5.8,
+      "director": "Claudio Fragasso",
+      "tmdb_url": "https://www.themoviedb.org/movie/42423"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:14",
+      "title": "Barry Seal - Una storia americana",
+      "channel": "IRIS",
+      "not_found": false,
+      "streaming": [
+        "Netflix",
+        "Sky Go",
+        "Now TV"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 6.9,
+      "director": "Doug Liman",
+      "tmdb_url": "https://www.themoviedb.org/movie/337170"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:14",
+      "title": "Maigret e l'arrampicatrice sociale",
+      "channel": "TOP CRIME",
+      "not_found": true,
+      "streaming": [],
+      "purchase": [],
+      "rent": [],
+      "availability": "⚪Not found on TMDB",
+      "rating": null,
+      "director": null,
+      "tmdb_url": ""
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:15",
+      "title": "The Truman Show",
+      "channel": "LA7 CINEMA",
+      "not_found": false,
+      "streaming": [
+        "Netflix",
+        "Paramount Plus",
+        "Paramount+ Amazon Channel"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 8.2,
+      "director": "Peter Weir",
+      "tmdb_url": "https://www.themoviedb.org/movie/37165"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:15",
+      "title": "Una spia e mezzo",
+      "channel": "27 TWENTYSEVEN",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 6.4,
+      "director": "Rawson Marshall Thurber",
+      "tmdb_url": "https://www.themoviedb.org/movie/302699"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:20",
+      "title": "To Catch a Killer - L'uomo che odiava tutti",
+      "channel": "RAI 4",
+      "not_found": false,
+      "streaming": [
+        "Sky Go",
+        "Now TV"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 6.8,
+      "director": "Damián Szifron",
+      "tmdb_url": "https://www.themoviedb.org/movie/605886"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "21:25",
+      "title": "The Lincoln Lawyer",
+      "channel": "CIELO",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 7.2,
+      "director": "Brad Furman",
+      "tmdb_url": "https://www.themoviedb.org/movie/50348"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "22:00",
+      "title": "Il club delle prime mogli",
+      "channel": "LA7",
+      "not_found": false,
+      "streaming": [
+        "Paramount Plus",
+        "Paramount+ Amazon Channel"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 6.7,
+      "director": "Hugh Wilson",
+      "tmdb_url": "https://www.themoviedb.org/movie/2925"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "22:57",
+      "title": "Il mio West",
+      "channel": "CINE34",
+      "not_found": false,
+      "streaming": [
+        "Infinity Selection Amazon Channel"
+      ],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟠Available on platforms",
+      "rating": 4.5,
+      "director": "Giovanni Veronesi",
+      "tmdb_url": "https://www.themoviedb.org/movie/62589"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:05",
+      "title": "Halloween II - Il signore della morte",
+      "channel": "ITALIA 2",
+      "not_found": false,
+      "streaming": [
+        "Timvision",
+        "Infinity Selection Amazon Channel"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 6.6,
+      "director": "Rick Rosenthal",
+      "tmdb_url": "https://www.themoviedb.org/movie/11281"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:07",
+      "title": "Ben-Hur",
+      "channel": "27 TWENTYSEVEN",
+      "not_found": false,
+      "streaming": [
+        "Sky Go",
+        "Now TV"
+      ],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Timvision",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🟠Available on platforms",
+      "rating": 7.9,
+      "director": "William Wyler",
+      "tmdb_url": "https://www.themoviedb.org/movie/665"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:08",
+      "title": "Hector e la ricerca della felicità",
+      "channel": "TV2000",
+      "not_found": false,
+      "streaming": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads"
+      ],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟠Available on platforms",
+      "rating": 6.7,
+      "director": "Peter Chelsom",
+      "tmdb_url": "https://www.themoviedb.org/movie/254375"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:10",
+      "title": "Cop Car",
+      "channel": "RAI 4",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 6.0,
+      "director": "Jon Watts",
+      "tmdb_url": "https://www.themoviedb.org/movie/310133"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:10",
+      "title": "Corsari",
+      "channel": "RAI MOVIE",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [],
+      "rent": [],
+      "availability": "🟢Only on TV",
+      "rating": 5.8,
+      "director": "Renny Harlin",
+      "tmdb_url": "https://www.themoviedb.org/movie/1408"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:10",
+      "title": "Qualcosa è cambiato",
+      "channel": "LA7 CINEMA",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Rakuten TV",
+        "Amazon Video"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 7.4,
+      "director": "James L. Brooks",
+      "tmdb_url": "https://www.themoviedb.org/movie/2898"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:34",
+      "title": "Fire Down Below - L'inferno sepolto",
+      "channel": "20",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 5.7,
+      "director": "Félix Alcalá",
+      "tmdb_url": "https://www.themoviedb.org/movie/14289"
+    },
+    {
+      "day": "Dom",
+      "number": "18",
+      "date": "Dom 18",
+      "time": "23:40",
+      "title": "Bastardi senza gloria",
+      "channel": "IRIS",
+      "not_found": false,
+      "streaming": [],
+      "purchase": [
+        "Apple TV Store",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "rent": [
+        "Apple TV Store",
+        "Rakuten TV",
+        "Amazon Video",
+        "CHILI"
+      ],
+      "availability": "🔵Pay only",
+      "rating": 8.2,
+      "director": "Quentin Tarantino",
+      "tmdb_url": "https://www.themoviedb.org/movie/16869"
     }
   ]
 }
